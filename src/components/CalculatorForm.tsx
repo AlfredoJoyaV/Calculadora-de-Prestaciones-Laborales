@@ -92,7 +92,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.aniosLaborados} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
               />
             </div>
             <div>
