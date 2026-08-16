@@ -6,7 +6,6 @@ import { calcularLiquidacion } from '../lib/calculations';
 import ResultsPanel from './ResultsPanel';
 
 export default function CalculatorForm() {
-  // 1. Iniciamos los valores como strings vacíos ('') para que los inputs nazcan en blanco
   const [formData, setFormData] = useState({
     salarioMensual: '' as number | string,
     aniosLaborados: '' as number | string,
@@ -25,7 +24,6 @@ export default function CalculatorForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      // 2. Ahora guardamos el valor crudo (permite que se quede vacío y se pueda borrar)
       [name]: value
     }));
   };
@@ -47,8 +45,6 @@ export default function CalculatorForm() {
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // 3. Antes de mandar a la lógica matemática, convertimos todo a números (Number)
-    // Si algún campo quedó vacío (''), Number('') se vuelve 0.
     const datosLimpios: DatosLaborales = {
       salarioMensual: Number(formData.salarioMensual) || 0,
       aniosLaborados: Number(formData.aniosLaborados) || 0,
@@ -84,7 +80,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.salarioMensual} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -96,7 +92,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.aniosLaborados} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -109,7 +105,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.mesesLaborados} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
@@ -170,10 +166,11 @@ export default function CalculatorForm() {
                 type="number" 
                 name="horasExtrasDiurnas" 
                 min="0"
+                required={!noAplicaJornadas}
                 disabled={noAplicaJornadas}
                 value={formData.horasExtrasDiurnas} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
               />
             </div>
             <div>
@@ -182,10 +179,11 @@ export default function CalculatorForm() {
                 type="number" 
                 name="horasExtrasNocturnas" 
                 min="0"
+                required={!noAplicaJornadas}
                 disabled={noAplicaJornadas}
                 value={formData.horasExtrasNocturnas} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
               />
             </div>
             <div>
@@ -194,10 +192,11 @@ export default function CalculatorForm() {
                 type="number" 
                 name="diasAsueto" 
                 min="0"
+                required={!noAplicaJornadas}
                 disabled={noAplicaJornadas}
                 value={formData.diasAsueto} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
               />
             </div>
             <div>
@@ -206,10 +205,11 @@ export default function CalculatorForm() {
                 type="number" 
                 name="diasDescanso" 
                 min="0"
+                required={!noAplicaJornadas}
                 disabled={noAplicaJornadas}
                 value={formData.diasDescanso} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
               />
             </div>
           </div>
