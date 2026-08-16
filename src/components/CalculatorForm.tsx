@@ -80,7 +80,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.salarioMensual} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
               />
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function CalculatorForm() {
                 required
                 value={formData.mesesLaborados} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 text-black"
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function CalculatorForm() {
                 disabled={noAplicaJornadas}
                 value={formData.horasExtrasDiurnas} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
               />
             </div>
             <div>
@@ -183,7 +183,7 @@ export default function CalculatorForm() {
                 disabled={noAplicaJornadas}
                 value={formData.horasExtrasNocturnas} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
               />
             </div>
             <div>
@@ -196,7 +196,7 @@ export default function CalculatorForm() {
                 disabled={noAplicaJornadas}
                 value={formData.diasAsueto} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
               />
             </div>
             <div>
@@ -209,7 +209,7 @@ export default function CalculatorForm() {
                 disabled={noAplicaJornadas}
                 value={formData.diasDescanso} 
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+                className="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 text-black"
               />
             </div>
           </div>
