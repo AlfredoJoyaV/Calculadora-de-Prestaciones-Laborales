@@ -80,7 +80,7 @@ export const calcularLiquidacion = (datos: DatosLaborales): LiquidacionResultado
   }
 
   // 7. CÁLCULO FINAL
-  const subtotalBruto = vacacionProporcional + aguinaldoProporcional + indemnizacion + montoSujetoDescuentos;
+  const subtotalBruto = aguinaldoProporcional + indemnizacion + montoSujetoDescuentos;
   const totalNeto = subtotalBruto - (deduccionISSS + deduccionAFP + deduccionRenta);
 
   return {
